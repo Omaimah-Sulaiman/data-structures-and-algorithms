@@ -98,11 +98,18 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  arr.push(value);
 
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  let arr1=[];
+  for (times;times>0;times--){
+
+    arr1=addValues(arr,num);
+    arr.push(arr1);
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -128,7 +135,7 @@ const createList = (availableItems) => {
   let list=[];
   availableItems.forEach(element => {
     if (availableItems.available==='true'){
-      list.push(element);
+      list.push(element.name);
     }
   });
   return list;
@@ -150,6 +157,11 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  arr.forEach(element => {
+    if(element % 2 === 0){
+      arr.push('fizz');
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
