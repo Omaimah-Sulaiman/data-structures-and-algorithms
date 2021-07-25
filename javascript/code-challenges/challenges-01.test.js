@@ -29,7 +29,7 @@ const addExclamation = (arr) => {
   // Solution code here...
   let array=[];
   arr.forEach(element => {
-    array.push(element+`{!}`);
+    array.push(element+`!`);
   });
   return array;
 };
@@ -65,7 +65,7 @@ const greeting = (word) => {
   // Solution code here...
   let array=[];
   word.forEach(element => {
-    array.push((element.toUpperCase())+`{!}`);
+    array.push((element.toUpperCase())+`!`);
   });
   return array;
 };
