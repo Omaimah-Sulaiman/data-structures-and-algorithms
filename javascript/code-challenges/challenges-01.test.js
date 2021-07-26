@@ -108,6 +108,7 @@ const addNumbers = (num, arr, times, callback) => {
   for (times;times>0;times--){
 
     arr1=addValues(arr,num);
+    console.log(arr1);
     arr.push(arr1);
   }
 };
@@ -135,7 +136,8 @@ const createList = (availableItems) => {
   let list=[];
   availableItems.forEach(element => {
     if (availableItems.available==='true'){
-      list.push(element.name);
+      element=element.name;
+      list.push(element);
     }
   });
   return list;
@@ -158,7 +160,7 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
   // Solution code here...
   arr.forEach(element => {
-    if(element % 2 === 0){
+    if(element % 3 === 0){
       arr.push('fizz');
     }
   });
