@@ -25,9 +25,14 @@ Returns: ['dyoll', 'eimaj'];
 const getNames = (arr) => {
   // Solution code here...
   // let arrayOfName=[];
-  const arrayMap=arr.slice(0).reverse().map((value) => {
-    // arrayOfName=value.name;
-    return value.name;
+  const arrayMap=arr.map((value) => {
+    let arrayOfName=value.name;
+    let reversedName="";
+    for(var i =arrayOfName.length - 1; i >= 0; i--){
+      reversedName += arrayOfName[i];
+    }
+    return reversedName;
+    // return arrayOfName;
   });
   return arrayMap;
 };
@@ -62,6 +67,8 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
+  let arr1 = arr;
+  arr1.push(arr[0]) ;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,6 +88,10 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
+  let obj1 = obj; 
+  let obj2 = obj1; 
+  obj1.yearBorn = year;
+  return obj2;
 };
 
 /* ------------------------------------------------------------------------------------------------
