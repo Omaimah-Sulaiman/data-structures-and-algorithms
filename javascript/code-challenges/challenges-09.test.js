@@ -10,7 +10,8 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here..
-  //dddddd
+  let newArr = arr.reduce((max, currentValue) => Math.max(max, currentValue), arr[0]);
+  return newArr;
 };
 
 
@@ -28,6 +29,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 
 const getCourseKeys = (obj) => {
   // Solution code here...
+  return [...Object.keys(courseInfo)];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +42,8 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
+  let vals = [...Object.values(obj)];
+  return vals.includes(value);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,6 +67,14 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
+  const names = Object.keys(obj);
+  const values = Object.values(obj);
+  const newArr = [];
+  for (let i = 0; i < names.length; i++) {
+     newArr.push(names[i]+': '+values[i]);
+    
+  }
+  return newArr;
 };
 
 
@@ -119,6 +131,9 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.forEach(element => {
+    houses.push(element.house);
+  });
   return houses;
 };
 
@@ -136,6 +151,14 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let bool = false;
+  arr.forEach(element => {
+    if (element.name===character&&Object.keys(element).includes('children')) {
+      bool = true;
+    }
+
+  });
+return bool;
 
 };
 
