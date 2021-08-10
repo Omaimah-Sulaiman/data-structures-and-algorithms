@@ -41,10 +41,13 @@ Write a function named removeThree that takes an index and an array. The functio
 const removeThree = (idx, arr) => {
   // Solution code here...
   let newArr = arr;
+   arrays-2d
   newArr.splice(idx,3);
   newArr.filter((i) => !arr.includes(i));
 
   return newArr;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,6 +155,7 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  // ..
   return result;
 };
 
