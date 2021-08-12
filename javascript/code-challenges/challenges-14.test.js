@@ -12,6 +12,12 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
+  let Array=arr.filter(element=>{
+    if( /^((Mr||Mrs||Dr||Ms).\s)[A-Z]/.test(element)){
+      return element
+    }
+})
+return Array
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,8 +30,9 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
-
-  return newArr;
+let Array=arr.map(element => 
+  element.charAt(0).toUpperCase()+element.slice(1));
+  return Array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,7 +107,16 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  // Solution code here..
+  let newArr = arr.filter((Value) => {
+    if (Value.mass > 77) return Value;
+  });
+  let array = [];
+  newArr.forEach(item => {
+    array.push(item.name);
+  });
+  return array.join(' - ');
+ 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,6 +135,12 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  arr.sort((x, y) => {
+    if (x[property] < y[property]) return -1;
+    else if (x[property] > y[property]) return 1;
+    else return 0;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
